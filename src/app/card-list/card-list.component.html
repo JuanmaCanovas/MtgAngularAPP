@@ -1,8 +1,16 @@
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+<nav class="navbar navbar-custom">
+   <div class="container-fluid">
+     <a class="navbar-brand"><img src="../assets/images/magicPNG.png" class="img-fluid logo-magic" alt=""></a>
+      <app-add-card (cardAdded)="loadCards()"></app-add-card> <!--Llamo a la funcion loadCards() del componente card-list para que al agregar una carta me recarge solo el componente y no toda la pagina-->
+   </div>
+ </nav>
+<div class="container-fluid contenedorgeneral">
+      <div class="cards-container d-flex flex-wrap">
+            @for (card of cards;track card.title){ 
+               <a [routerLink]="['card/', card.id]" (click)="clickedCard(card.id)"><img [src]="card.imageUrl" class="cardImg" alt="{{ card.title }}" (mouseover)="handleMouseOver(card)" (mouseout)="handleMouseOut()"></a>
+               <!--<p class="card-text">Mana Cost: <span [innerHTML]="convertCostService.convertManaCostToSymbols(card.manaCost)"></span></p>  Esto lo voy a usar despues en ver la carta individualmente (Sirve para reemplazar los costos de mana de {B} por ej a su respectivo simbolo)  -->
+            }@empty {
+            <h1>You have no cards!</h1>
+            }
+      </div>
+</div>

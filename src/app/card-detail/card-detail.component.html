@@ -1,0 +1,24 @@
+<nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['']"><img src="../assets/images/magicPNG.png" class="img-fluid logo-magic" alt=""></a>
+    </div>
+</nav>
+@if(card){
+  <div class="cardWrapper">
+    <img src="{{card.imageUrl}}" class="cardImg" alt="...">
+    <div class="card text-bg-light cardcontenedor" style="max-width: 20rem;">
+      
+      <div class="card-header d-flex d-nowrap pb-0"><h2 class="cardTitle">{{card.title}}</h2><p class="manacost" [innerHTML]="convertCostService.convertManaCostToSymbols(card.manaCost)"></p></div>
+      <div class="card-body">
+        <h5 class="card-title type">{{card.type}}</h5>
+        <span class="card-text oracleText manacost" [innerHTML]="convertCostService.convertManaCostToSymbols(card.cardText)">{{card.cardText}}</span>
+        @if(card.flavorText!=='flavorText '+card.id){
+          <p class="flavorText">{{card.flavorText}}</p>
+        }
+      </div>
+      <div class="card-footer text-body-secondary pb-0 text-center">
+        <p>Illustrated by {{card.artist}}</p>
+      </div>
+    </div>
+</div>
+}

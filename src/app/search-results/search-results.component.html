@@ -1,0 +1,7 @@
+<div class="searchresults">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let card of searchResults" (click)="selectCard(card)">
+        {{ card.name }}
+      </li>
+    </ul>
+  </div>

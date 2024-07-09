@@ -1,0 +1,57 @@
+
+.navbar-custom{
+    background-color: #5510d6;
+    position: relative;
+  }
+  .cardWrapper {
+    display: flex;
+    align-items: flex-start; /* Alinea la tarjeta y la imagen en la parte superior */
+    justify-content: center;
+    margin-top: 5%;
+    position: relative;
+  }
+  .cardImg{
+    max-width: 336px; /* Ajusta el tamaño de la imagen */
+    margin-right: 3.5%; /* Ajusta este valor para controlar la superposición */
+    z-index:2; /* Asegura que la imagen esté detrás del contenedor de la tarjeta */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px rgba(31, 30, 30, 0.434);
+  }
+  .logo-magic{
+    max-height: 50px;
+  }
+.cardTitle{
+  font-size: 23px;
+}
+
+.type{
+  font-size: 13px;
+  text-align: center;
+  font-weight: bold;
+}
+  .manacost{
+    margin-top: auto;
+    margin-left: 10px;
+  }
+.cardcontenedor{
+  max-width: 30rem;
+  position: relative;
+  z-index: 1; /* Asegura que el contenedor de la tarjeta esté sobre la imagen */
+  background-color: #f8f9fa; /* Añade un color de fondo para la tarjeta */
+  margin-left: -4rem; /* Ajusta este valor para controlar la superposición horizontal */
+  margin-top: 2rem; /* Ajusta este valor para controlar la superposición vertical */
+  overflow: hidden;
+}
+.flavorText{
+  padding-top: 2rem;
+  font-size: 12px;
+  font-family:"MPlantin", Georgia, "Times New Roman", serif;
+}
+
+.oracleText{
+  padding-top: 1rem;
+  font-size: 13px;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+}

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { Card } from './Card';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ConvertCostService } from '../convert-cost.service';
+import { MockapiService } from '../mockapi.service';
+import { CardSharedService } from '../card-shared.service';
 
 @Component({
   selector: 'app-card-list',
@@ -7,11 +9,35 @@ import { Card } from './Card';
   styleUrl: './card-list.component.scss'
 })
 export class CardListComponent {
-  card : Card[] =  [{
-    title : "Card title",
-    manaCost : "1",
-    cardText : "Some quick example text to build on the card title and make up the bulk of the card's content.",
-    type : "instant",
-    imageUrl : "url"
-  }]
+  cards : any[] =  [];
+  activeCard: any | null = null;
+
+constructor(public convertCostService: ConvertCostService, private MockapiService : MockapiService, private cardSharedService: CardSharedService) { }
+
+ngOnInit(): void {
+  this.loadCards();
+  }
+
+  loadCards(){
+    this.MockapiService.getAllCards().subscribe(
+      data => {
+        this.cards = data;
+      },
+      error => {
+        console.error('Error loading cards:', error);
+      }
+    );
+  }
+
+  clickedCard(cardId : string){
+    this.cardSharedService.setSelectedCardId(cardId);
+  }
+
+  handleMouseOver(card: any) {
+    this.activeCard = card;
+  }
+
+  handleMouseOut() {
+    this.activeCard = null;
+  }
 }

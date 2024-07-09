@@ -1,0 +1,26 @@
+.contenedorgeneral{
+  width: 80%;
+  margin-top: 5%;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente línea si no caben en una fila */
+    gap: 1rem; /* Añade un espacio entre las tarjetas */
+  }
+
+.cardImg{
+  width: 14rem;
+  transition: .5s;
+}
+.cardImg:hover {
+  transform: scale(1.1); /* Mantén la imagen activa escalada */
+}
+
+.navbar-custom{
+  background-color: #5510d6;
+  position: relative;
+}
+
+.logo-magic{
+  max-height: 50px;
+}
