@@ -3,7 +3,7 @@
 # Entrega final seminario de Angular
 
 ## Descripción del Proyecto
-La temática elegida para este proyecto es una lista de cartas de **Magic: The Gathering**. Se consumirá la **API de Scryfall**, un servicio que proporciona datos sobre todas las cartas de MTG, para buscar cartas mediante el componente `search-cards`. Las cartas encontradas se podrán agregar a la lista de cartas, cuyos datos se almacenarán utilizando **MockAPI**.
+La temática elegida para este proyecto es una lista de cartas de **Magic: The Gathering**. Se consumirá la **API de Scryfall**, un servicio que proporciona datos sobre todas las cartas de MTG, para agregar cartas mediante el componente add-cards, este se ayudara del componente search-results (Tambien conectado al servicio de **Scryfall**) que le ira dando recomendaciones de autocompletado para el input. Las cartas se podran agregar a la lista de cartas, cuyos datos se almacenarán utilizando **MockAPI**.
 
 ## Datos del Alumno
 - **Nombre:** Juan Manuel Canovas
