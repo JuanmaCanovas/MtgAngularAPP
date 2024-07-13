@@ -1,6 +1,6 @@
 <form class="d-flex" role="search" (ngSubmit)="addCard()">
   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [formControl]="searchControl">
-  <button class="btn btn-outline-light" type="submit">Add</button>
+  <button class="btn btn-outline-light addBtn" type="submit">Add</button>
 </form>
 
 <app-search-results [searchControl]="searchControl" (cardSelected)="cardSelected($event)"></app-search-results>

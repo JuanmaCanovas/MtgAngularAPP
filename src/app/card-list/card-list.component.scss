@@ -24,3 +24,22 @@
 .logo-magic{
   max-height: 50px;
 }
+
+.imageText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Ajusta el color del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px; /* Ajusta el tamaño del texto */
+  text-align: center;
+}
+
+.imageContainer {
+  cursor: pointer;
+  position: relative;
+  width: fit-content; /* Ajusta al tamaño de la imagen */
+}

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ConvertCostService } from '../convert-cost.service';
 import { MockapiService } from '../mockapi.service';
 import { CardSharedService } from '../card-shared.service';
+import { Card } from '../Card';
 
 @Component({
   selector: 'app-card-list',
@@ -9,7 +10,7 @@ import { CardSharedService } from '../card-shared.service';
   styleUrl: './card-list.component.scss'
 })
 export class CardListComponent {
-  cards : any[] =  [];
+  cards : Card[] =  [];
   activeCard: any | null = null;
 
 constructor(public convertCostService: ConvertCostService, private MockapiService : MockapiService, private cardSharedService: CardSharedService) { }
@@ -29,15 +30,8 @@ ngOnInit(): void {
     );
   }
 
-  clickedCard(cardId : string){
+  clickedCard(cardId : number){
     this.cardSharedService.setSelectedCardId(cardId);
   }
 
-  handleMouseOver(card: any) {
-    this.activeCard = card;
-  }
-
-  handleMouseOut() {
-    this.activeCard = null;
-  }
 }

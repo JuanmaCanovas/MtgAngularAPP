@@ -11,10 +11,14 @@ export class MockapiService {
   constructor(private http: HttpClient) { }
 
   getAllCards() {
-    return this.http.get<any[]>(this.mockApiUrl);
+    return this.http.get<Card[]>(this.mockApiUrl);
   }
 
-  getCard(cardID:string){
+  getCard(cardID:number){
     return this.http.get<Card>(`${this.mockApiUrl}/${cardID}`);
+  }
+
+  deleteCard (cardID:number){
+    return this.http.delete(`${this.mockApiUrl}/${cardID}`);
   }
 }

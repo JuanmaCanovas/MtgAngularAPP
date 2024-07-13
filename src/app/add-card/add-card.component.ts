@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ScryfallService } from '../scryfall.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Card } from '../Card';
 
 @Component({
   selector: 'app-add-card',
@@ -13,12 +14,12 @@ import { of } from 'rxjs';
 export class AddCardComponent {
   @Output() cardAdded = new EventEmitter<void>();   
   searchControl = new FormControl();
-  selectedCard: any;
+  selectedCard: string = '';
 
   constructor(private scryfallService: ScryfallService, private http: HttpClient) { }
 
-  cardSelected(card: any) {
-    this.selectedCard = card;
+  cardSelected(card: Card) {
+    this.selectedCard = card.name;
   }
 
   addCard() {
@@ -38,7 +39,7 @@ export class AddCardComponent {
           const mockApiUrl = 'https://66848cac56e7503d1ae087e2.mockapi.io/cards/card';
 
           const cardData = {
-            title: card.name,
+            name: card.name,
             manaCost: card.mana_cost,
             cardText: card.oracle_text,
             type: card.type_line,
@@ -53,7 +54,7 @@ export class AddCardComponent {
               console.log('Card added successfully:', response);
               
               this.cardAdded.emit(); //Emito el evento de cardAdded asi se recarga el componente card-list
-              this.selectedCard = null;
+              this.selectedCard = '';
               
             },
             error => {

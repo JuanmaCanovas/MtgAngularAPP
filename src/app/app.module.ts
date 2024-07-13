@@ -12,13 +12,15 @@ import { CardListComponent } from './card-list/card-list.component';
 import { AddCardComponent } from './add-card/add-card.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { DeleteCardComponent } from './delete-card/delete-card.component';
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     AddCardComponent,
     SearchResultsComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    DeleteCardComponent
   ],
   imports: [
     BrowserModule,

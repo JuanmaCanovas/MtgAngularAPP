@@ -3,7 +3,7 @@ import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/
 import { ScryfallService } from '../scryfall.service';
 import { FormControl } from '@angular/forms';
 import { of } from 'rxjs';
-
+import { Card } from '../Card';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -13,8 +13,8 @@ export class SearchResultsComponent {
   @Input() 
   searchControl: FormControl = new FormControl();
   @Output() 
-  cardSelected = new EventEmitter<any>();
-  searchResults: any[] = [];
+  cardSelected = new EventEmitter<Card>();
+  searchResults: Card[] = [];
 
   constructor(private scryfallService: ScryfallService) { }
 
@@ -48,7 +48,7 @@ export class SearchResultsComponent {
     });
   }
 
-  selectCard(card: any) {
+  selectCard(card: Card) {
     this.cardSelected.emit(card);
     this.searchControl.setValue(card.name, { emitEvent: false });
     this.searchResults = [];

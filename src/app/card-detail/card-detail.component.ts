@@ -11,7 +11,7 @@ import { ConvertCostService } from '../convert-cost.service';
 export class CardDetailComponent implements OnInit{
 
   card : Card | undefined;
-  selectedCardId: string | null = null;
+  selectedCardId: number = 0;
 
   constructor(private cardSharedService: CardSharedService, public convertCostService: ConvertCostService, private MockapiService : MockapiService) {}
 
@@ -24,7 +24,6 @@ export class CardDetailComponent implements OnInit{
       this.MockapiService.getCard(this.selectedCardId).subscribe(
         data => {
           this.card = data;
-          
         },
         error =>{
           console.error('Error loading card:', error);

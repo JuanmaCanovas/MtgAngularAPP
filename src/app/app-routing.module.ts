@@ -6,6 +6,10 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
 const routes: Routes = [
   {
     path: '', 
+    redirectTo: 'cards',
+    pathMatch: 'full'
+  },{
+    path:'cards',
     component: CardListComponent
   },
   {

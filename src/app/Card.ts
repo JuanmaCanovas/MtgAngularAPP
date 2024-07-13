@@ -1,7 +1,7 @@
 export interface Card {
 
     id : number;
-    title : string;
+    name : string;
     manaCost : string;
     cardText : string;
     type : string;

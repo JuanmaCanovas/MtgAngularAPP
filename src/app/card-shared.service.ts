@@ -4,15 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CardSharedService {
-  selectedCardId: string | null = null;
+  selectedCardId: number =0;
 
   constructor() {}
 
-  setSelectedCardId(cardId: string) {
+  setSelectedCardId(cardId: number) {
     this.selectedCardId = cardId;
   }
 
-  getSelectedCardId(): string | null {
+  getSelectedCardId(): number {
     return this.selectedCardId;
   }
 }
