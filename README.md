@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ColeccionMTG
 # Entrega final seminario de Angular
 
@@ -16,4 +16,4 @@ La temática elegida para este proyecto es una lista de cartas de **Magic: The G
 - **Scryfall API:** Para la búsqueda y obtención de datos de cartas de MTG.
 - **MockAPI:** Para el almacenamiento y gestión de datos de las cartas en la colección personal.
 
->>>>>>> c58f62906c708caede5cc5235b8e39722507326f
+
